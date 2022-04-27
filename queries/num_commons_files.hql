@@ -21,5 +21,6 @@ WITH
             wmf_raw.mediawiki_imagelinks as m
             INNER JOIN wiki_content_namespaces AS ns
                 ON ( ns.namespace = m.il_from_namespace)
+                AND ns.dbname = m.wiki_db
         WHERE
             m.snapshot = '{metrics_month}'
